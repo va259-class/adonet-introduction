@@ -5,6 +5,8 @@ VisualStudioVersion = 17.11.35327.3
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vektorel.Northwind.CLI", "Vektorel.Northwind.CLI\Vektorel.Northwind.CLI.csproj", "{A47642C0-2432-454A-9110-AC0671EC41F8}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Vektorel.Northwind.UI", "Vektorel.Northwind.UI\Vektorel.Northwind.UI.csproj", "{822CB2BE-818F-40CE-AB11-2054BE8AEF6A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{A47642C0-2432-454A-9110-AC0671EC41F8}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A47642C0-2432-454A-9110-AC0671EC41F8}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A47642C0-2432-454A-9110-AC0671EC41F8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{822CB2BE-818F-40CE-AB11-2054BE8AEF6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{822CB2BE-818F-40CE-AB11-2054BE8AEF6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{822CB2BE-818F-40CE-AB11-2054BE8AEF6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{822CB2BE-818F-40CE-AB11-2054BE8AEF6A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
