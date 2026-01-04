@@ -39,10 +39,13 @@
             dgvEmployees.AllowUserToAddRows = false;
             dgvEmployees.AllowUserToDeleteRows = false;
             dgvEmployees.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgvEmployees.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvEmployees.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvEmployees.Location = new Point(12, 42);
+            dgvEmployees.MultiSelect = false;
             dgvEmployees.Name = "dgvEmployees";
             dgvEmployees.ReadOnly = true;
+            dgvEmployees.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvEmployees.Size = new Size(510, 307);
             dgvEmployees.TabIndex = 0;
             // 

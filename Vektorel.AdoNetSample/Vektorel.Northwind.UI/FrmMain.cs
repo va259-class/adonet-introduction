@@ -14,7 +14,22 @@ namespace Vektorel.Northwind.UI
             OpenForm<FrmCustomers>();
         }
 
-        private void OpenForm<T>() where T : Form 
+        private void btnEmployees_Click(object sender, EventArgs e)
+        {
+            OpenForm<FrmEmployees>();
+        }
+
+        private void btnSuppliers_Click(object sender, EventArgs e)
+        {
+            OpenForm<FrmSuppliers>();
+        }
+
+        private void btnSearchProduct_Click(object sender, EventArgs e)
+        {
+            OpenForm<FrmSearchProduct>();
+        }
+
+        private void OpenForm<T>() where T : Form
         {
             var f = Activator.CreateInstance<T>();
             f.ShowDialog();

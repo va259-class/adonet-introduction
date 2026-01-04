@@ -53,6 +53,7 @@
             btnSearchProduct.TabIndex = 0;
             btnSearchProduct.Text = "Ürün Ara";
             btnSearchProduct.UseVisualStyleBackColor = true;
+            btnSearchProduct.Click += btnSearchProduct_Click;
             // 
             // btnSuppliers
             // 
@@ -62,6 +63,7 @@
             btnSuppliers.TabIndex = 1;
             btnSuppliers.Text = "Tedarikçi Listesi";
             btnSuppliers.UseVisualStyleBackColor = true;
+            btnSuppliers.Click += btnSuppliers_Click;
             // 
             // btnOutOfStock
             // 
@@ -90,6 +92,7 @@
             btnEmployees.TabIndex = 4;
             btnEmployees.Text = "Personel Listesi";
             btnEmployees.UseVisualStyleBackColor = true;
+            btnEmployees.Click += btnEmployees_Click;
             // 
             // button16
             // 

@@ -43,8 +43,16 @@ namespace Vektorel.Northwind.UI.Forms
                 var emp = new EmployeeDTO
                 {
                     FirstName = reader[nameof(EmployeeDTO.FirstName)].ToString(),
+                    LastName = reader[nameof(EmployeeDTO.LastName)].ToString(),
+                    Country = reader[nameof(EmployeeDTO.Country)].ToString(),
+                    Title = reader[nameof(EmployeeDTO.Title)].ToString(),
+                    HomePhone = reader[nameof(EmployeeDTO.HomePhone)].ToString(),
                 };
+                list.Add(emp);
             }
+
+            dgvEmployees.DataSource = null;
+            dgvEmployees.DataSource = list;
         }
 
         private SqlConnection GetConnection()
