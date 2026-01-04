@@ -40,9 +40,19 @@ namespace Vektorel.Northwind.UI.Forms
         private void LoadCustomers(SqlConnection connection, int page)
         {
             var offset = (page - 1) * PAGESIZE;
+            var filter = string.Empty;
+            if (txtCode.Text.Length == 5)
+            {
+                filter = $"where CustomerID = '{txtCode.Text}'";
+            }
+            else if (cmbCountries.SelectedIndex > -1) // seçilen varsa
+            {
+                filter = $"where Country = '{cmbCountries.SelectedItem.ToString()}'";
+            }
             // Müşteriler çekiliyor
             var customerQuery = @$"select CustomerID, CompanyName, ContactName, Phone, Country
                                   from Customers
+                                  {filter}
                                   order by CompanyName
                                   offset {offset} rows
                                   fetch next {PAGESIZE} rows only";
@@ -70,6 +80,10 @@ namespace Vektorel.Northwind.UI.Forms
             if (list.Count < PAGESIZE)
             {
                 btnNext.Enabled = false;
+            }
+            else
+            {
+                btnNext.Enabled = true;
             }
 
             dgvTable.DataSource = null;
@@ -115,5 +129,25 @@ namespace Vektorel.Northwind.UI.Forms
             btnNext.Enabled = true;
         }
 
+        private void txtCode_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                using var connection = GetConnection();
+                LoadCustomers(connection, 1);
+            }
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtCode.Clear();
+            cmbCountries.SelectedIndex = -1;
+        }
+
+        private void cmbCountries_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            using var connection = GetConnection();
+            LoadCustomers(connection, 1);
+        }
     }
 }

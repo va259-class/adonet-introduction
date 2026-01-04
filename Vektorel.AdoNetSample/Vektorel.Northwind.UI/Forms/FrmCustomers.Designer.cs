@@ -54,11 +54,13 @@
             // 
             // txtCode
             // 
+            txtCode.CharacterCasing = CharacterCasing.Upper;
             txtCode.Location = new Point(12, 27);
             txtCode.MaxLength = 5;
             txtCode.Name = "txtCode";
             txtCode.Size = new Size(100, 23);
             txtCode.TabIndex = 1;
+            txtCode.KeyDown += txtCode_KeyDown;
             // 
             // label1
             // 
@@ -86,6 +88,7 @@
             cmbCountries.Name = "cmbCountries";
             cmbCountries.Size = new Size(121, 23);
             cmbCountries.TabIndex = 4;
+            cmbCountries.SelectedIndexChanged += cmbCountries_SelectedIndexChanged;
             // 
             // btnClear
             // 
@@ -95,6 +98,7 @@
             btnClear.TabIndex = 5;
             btnClear.Text = "Temizle";
             btnClear.UseVisualStyleBackColor = true;
+            btnClear.Click += btnClear_Click;
             // 
             // btnNext
             // 
