@@ -41,9 +41,12 @@
             // dgvProducts
             // 
             dgvProducts.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgvProducts.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvProducts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvProducts.Location = new Point(12, 50);
+            dgvProducts.MultiSelect = false;
             dgvProducts.Name = "dgvProducts";
+            dgvProducts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvProducts.Size = new Size(560, 349);
             dgvProducts.TabIndex = 0;
             // 
@@ -104,6 +107,7 @@
             btnSearch.TabIndex = 6;
             btnSearch.Text = "Ara";
             btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.Click += btnSearch_Click;
             // 
             // FrmSearchProduct
             // 

@@ -12,59 +12,47 @@ using System.Windows.Forms;
 
 namespace Vektorel.Northwind.UI.Forms
 {
-    public partial class FrmSearchProduct : Form
+    public partial class FrmNewProduct : Form
     {
-        public FrmSearchProduct()
+        public FrmNewProduct()
         {
             InitializeComponent();
         }
 
-        private void FrmSearchProduct_Load(object sender, EventArgs e)
+        private void FrmNewProduct_Load(object sender, EventArgs e)
         {
             LoadCategories();
             LoadSuppliers();
-            LoadProducts();
         }
 
-        private void btnSearch_Click(object sender, EventArgs e)
+        private void btnSave_Click(object sender, EventArgs e)
         {
-            LoadProducts();
-        }
+            //öncesinde üsün adından arama yapıp doğrudan insert işlemini atlatmak iyi olabilir
 
-        private void LoadProducts()
-        {
-            var filter = string.Empty;
-            if (cmbCategories.SelectedIndex > 0)
-            {
-                filter = $"where c.CategoryId = {(cmbCategories.SelectedItem as ComboboxItem).Id}";
-            }
             using var connection = GetConnection();
-            var query = @$"select p.ProductName, 
-	                              p.UnitPrice, 
-	                              p.UnitsInStock, 
-	                              c.CategoryName, 
-	                              s.CompanyName
-                           from Products p
-                           inner join Categories c on p.CategoryID = c.CategoryID
-                           inner join Suppliers s on p.SupplierID = s.SupplierID
-                           {filter}";
-            using var command = new SqlCommand(query, connection);
-            using var reader = command.ExecuteReader();
-            var list = new List<ProductDTO>();
-            while (reader.Read())
+            var query = @"insert into Products (ProductName, UnitPrice, UnitsInStock, CategoryId, SupplierId)
+                          values (@pn, @up, @us, @cat, @sup)";
+            var command = new SqlCommand(query, connection);
+            command.Parameters.AddWithValue("@pn", txtName.Text);
+            command.Parameters.AddWithValue("@up", nudPrice.Value);
+            command.Parameters.AddWithValue("@us", nudStock.Value);
+            command.Parameters.AddWithValue("@cat", (cmbCategories.SelectedItem as ComboboxItem).Id);
+            command.Parameters.AddWithValue("@sup", (cmbSuppliers.SelectedItem as ComboboxItem).Id);
+
+            var result = command.ExecuteNonQuery();
+            if (result > 0)
             {
-                var product = new ProductDTO();
-                product.ProductName = reader["ProductName"].ToString();
-                product.UnitPrice = Convert.ToDecimal(reader["UnitPrice"]);
-                product.UnitsInStock = Convert.ToInt32(reader["UnitsInStock"]);
-                product.Category = reader["CategoryName"].ToString();
-                product.Supplier = reader["CompanyName"].ToString();
-
-                list.Add(product);
+                MessageBox.Show("Ürün eklendi", "Başarılı", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                txtName.Clear();
+                nudStock.Value = 1;
+                nudPrice.Value = 1;
+                cmbCategories.SelectedIndex = -1;
+                cmbSuppliers.SelectedIndex = -1;
             }
-
-            dgvProducts.DataSource = null;
-            dgvProducts.DataSource = list;
+            else
+            {
+                MessageBox.Show("Ürün eklenemedi", "Hatalı işlem", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
 
         private void LoadCategories()
@@ -127,21 +115,6 @@ namespace Vektorel.Northwind.UI.Forms
         {
             public int Id { get; set; }
             public string Name { get; set; }
-        }
-
-        class ProductDTO
-        {
-            public string ProductName { get; set; }
-            public decimal UnitPrice { get; set; }
-            public int UnitsInStock { get; set; }
-            public string Category { get; set; }
-            public string Supplier { get; set; }
-        }
-
-        private void btnClear_Click(object sender, EventArgs e)
-        {
-            cmbCategories.SelectedIndex = -1;
-            cmbSuppliers.SelectedIndex = -1;
         }
 
         

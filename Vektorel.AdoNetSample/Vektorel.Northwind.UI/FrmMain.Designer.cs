@@ -33,8 +33,8 @@
             btnOutOfStock = new Button();
             btnCustomers = new Button();
             btnEmployees = new Button();
-            button16 = new Button();
-            button5 = new Button();
+            btnNewProduct = new Button();
+            btnNewCategory = new Button();
             button6 = new Button();
             button7 = new Button();
             button9 = new Button();
@@ -94,23 +94,25 @@
             btnEmployees.UseVisualStyleBackColor = true;
             btnEmployees.Click += btnEmployees_Click;
             // 
-            // button16
+            // btnNewProduct
             // 
-            button16.Location = new Point(136, 12);
-            button16.Name = "button16";
-            button16.Size = new Size(118, 23);
-            button16.TabIndex = 8;
-            button16.Text = "-";
-            button16.UseVisualStyleBackColor = true;
+            btnNewProduct.Location = new Point(136, 12);
+            btnNewProduct.Name = "btnNewProduct";
+            btnNewProduct.Size = new Size(118, 23);
+            btnNewProduct.TabIndex = 8;
+            btnNewProduct.Text = "Yeni Ürün";
+            btnNewProduct.UseVisualStyleBackColor = true;
+            btnNewProduct.Click += btnNewProduct_Click;
             // 
-            // button5
+            // btnNewCategory
             // 
-            button5.Location = new Point(136, 41);
-            button5.Name = "button5";
-            button5.Size = new Size(118, 23);
-            button5.TabIndex = 9;
-            button5.Text = "-";
-            button5.UseVisualStyleBackColor = true;
+            btnNewCategory.Location = new Point(136, 41);
+            btnNewCategory.Name = "btnNewCategory";
+            btnNewCategory.Size = new Size(118, 23);
+            btnNewCategory.TabIndex = 9;
+            btnNewCategory.Text = "Yeni Kategori";
+            btnNewCategory.UseVisualStyleBackColor = true;
+            btnNewCategory.Click += btnNewCategory_Click;
             // 
             // button6
             // 
@@ -197,8 +199,8 @@
             Controls.Add(button9);
             Controls.Add(button6);
             Controls.Add(button7);
-            Controls.Add(button5);
-            Controls.Add(button16);
+            Controls.Add(btnNewCategory);
+            Controls.Add(btnNewProduct);
             Controls.Add(btnEmployees);
             Controls.Add(btnOutOfStock);
             Controls.Add(btnCustomers);
@@ -219,8 +221,8 @@
         private Button btnOutOfStock;
         private Button btnCustomers;
         private Button btnEmployees;
-        private Button button16;
-        private Button button5;
+        private Button btnNewProduct;
+        private Button btnNewCategory;
         private Button button6;
         private Button button7;
         private Button button9;
