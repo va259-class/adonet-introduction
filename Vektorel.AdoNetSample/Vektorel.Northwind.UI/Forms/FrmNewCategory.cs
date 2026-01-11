@@ -23,10 +23,10 @@ namespace Vektorel.Northwind.UI.Forms
         {
             using var connection = GetConnection();
             var query = @"insert into Categories (CategoryName, Description)
-                          values (@cn, @dsc)";
+                          values (@p1, @p2)";
             var command = new SqlCommand(query, connection);
-            command.Parameters.AddWithValue("@cn", txtName.Text);
-            command.Parameters.AddWithValue("@dsc", txtDescription.Text);
+            command.Parameters.AddWithValue("@p1", txtName.Text);
+            command.Parameters.AddWithValue("@p2", txtDescription.Text);
             var result = command.ExecuteNonQuery();
 
             if (result > 0)
