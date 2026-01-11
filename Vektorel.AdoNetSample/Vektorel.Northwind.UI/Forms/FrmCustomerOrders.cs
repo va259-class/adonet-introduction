@@ -62,15 +62,20 @@ namespace Vektorel.Northwind.UI.Forms
             using var reader = dm.GetReader("select CustomerId from Customers order by CustomerId");
             var customerList = new AutoCompleteStringCollection();
 
-            while (reader.Read()) 
+            while (reader.Read())
             {
-                var name = reader.GetString(0);   
+                var name = reader.GetString(0);
                 customerList.Add(name);
             }
 
             txtCustomerCode.AutoCompleteCustomSource = customerList;
             txtCustomerCode.AutoCompleteSource = AutoCompleteSource.CustomSource;
             btnNewOrder.Enabled = false;
+        }
+
+        private void btnNewOrder_Click(object sender, EventArgs e)
+        {
+
         }
 
         class CustomerOrderDTO
@@ -84,5 +89,7 @@ namespace Vektorel.Northwind.UI.Forms
             [DisplayName("Tutar")]
             public decimal Total { get; set; }
         }
+
+        
     }
 }

@@ -77,6 +77,7 @@
             btnNewOrder.TabIndex = 3;
             btnNewOrder.Text = "Yeni Sipariş";
             btnNewOrder.UseVisualStyleBackColor = true;
+            btnNewOrder.Click += btnNewOrder_Click;
             // 
             // FrmCustomerOrders
             // 
