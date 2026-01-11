@@ -35,7 +35,7 @@
             btnEmployees = new Button();
             btnNewProduct = new Button();
             btnNewCategory = new Button();
-            button6 = new Button();
+            btnProductSales = new Button();
             btnCustomerOrders = new Button();
             button9 = new Button();
             button10 = new Button();
@@ -114,14 +114,14 @@
             btnNewCategory.UseVisualStyleBackColor = true;
             btnNewCategory.Click += btnNewCategory_Click;
             // 
-            // button6
+            // btnProductSales
             // 
-            button6.Location = new Point(136, 99);
-            button6.Name = "button6";
-            button6.Size = new Size(118, 23);
-            button6.TabIndex = 11;
-            button6.Text = "-";
-            button6.UseVisualStyleBackColor = true;
+            btnProductSales.Location = new Point(136, 99);
+            btnProductSales.Name = "btnProductSales";
+            btnProductSales.Size = new Size(118, 23);
+            btnProductSales.TabIndex = 11;
+            btnProductSales.Text = "Yıllık Ürün Satışı";
+            btnProductSales.UseVisualStyleBackColor = true;
             // 
             // btnCustomerOrders
             // 
@@ -198,7 +198,7 @@
             Controls.Add(button13);
             Controls.Add(button14);
             Controls.Add(button9);
-            Controls.Add(button6);
+            Controls.Add(btnProductSales);
             Controls.Add(btnCustomerOrders);
             Controls.Add(btnNewCategory);
             Controls.Add(btnNewProduct);
@@ -224,7 +224,7 @@
         private Button btnEmployees;
         private Button btnNewProduct;
         private Button btnNewCategory;
-        private Button button6;
+        private Button btnProductSales;
         private Button btnCustomerOrders;
         private Button button9;
         private Button button10;

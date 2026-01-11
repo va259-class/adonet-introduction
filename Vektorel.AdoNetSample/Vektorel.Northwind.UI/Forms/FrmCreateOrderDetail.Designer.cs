@@ -134,7 +134,6 @@
             btnComplete.TabIndex = 9;
             btnComplete.Text = "Siparişi Tamamla";
             btnComplete.UseVisualStyleBackColor = true;
-            btnComplete.Click += btnComplete_Click;
             // 
             // FrmCreateOrderDetail
             // 

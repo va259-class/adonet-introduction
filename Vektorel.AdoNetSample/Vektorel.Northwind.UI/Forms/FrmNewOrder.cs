@@ -44,8 +44,19 @@ namespace Vektorel.Northwind.UI.Forms
             {
                 var orderId = Convert.ToInt32(reader["OrderID"]);
                 var f = new FrmCreateOrderDetail(orderId);
+                f.OnTotalChanged += OnTotalChanged;
+                f.FormClosed += (s, e) =>
+                {
+                    // form kapatıldığında register / subscribe olunan event'ten de çıkılması lazım
+                    f.OnTotalChanged -= OnTotalChanged;
+                };
                 f.ShowDialog();
             }
+        }
+
+        private void OnTotalChanged(decimal value)
+        {
+            txtTotal.Text = value.ToString();
         }
 
         private void FrmNewOrder_Load(object sender, EventArgs e)

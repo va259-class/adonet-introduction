@@ -11,6 +11,7 @@ using Vektorel.Northwind.UI.Managers;
 
 namespace Vektorel.Northwind.UI.Forms
 {
+    public delegate void TotalChanged(decimal value);
     public partial class FrmCreateOrderDetail : Form
     {
         private readonly int orderId;
@@ -23,12 +24,7 @@ namespace Vektorel.Northwind.UI.Forms
             this.Text += $" - {orderId}";
         }
 
-
-
-        private void btnComplete_Click(object sender, EventArgs e)
-        {
-
-        }
+        public event TotalChanged OnTotalChanged;
 
         private void btnAdd_Click(object sender, EventArgs e)
         {
@@ -47,6 +43,8 @@ namespace Vektorel.Northwind.UI.Forms
                 Price = nudPrice.Value,
                 Quantity = nudStock.Value
             });
+
+            OnTotalChanged?.Invoke(details.Sum(s => s.Price * s.Quantity));
         }
 
         private void FrmCreateOrderDetail_Load(object sender, EventArgs e)
