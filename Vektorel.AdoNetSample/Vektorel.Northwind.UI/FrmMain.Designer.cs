@@ -122,6 +122,7 @@
             btnProductSales.TabIndex = 11;
             btnProductSales.Text = "Yıllık Ürün Satışı";
             btnProductSales.UseVisualStyleBackColor = true;
+            btnProductSales.Click += btnProductSales_Click;
             // 
             // btnCustomerOrders
             // 

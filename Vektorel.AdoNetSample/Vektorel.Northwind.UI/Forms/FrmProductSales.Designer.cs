@@ -28,31 +28,36 @@
         /// </summary>
         private void InitializeComponent()
         {
-            dataGridView1 = new DataGridView();
-            comboBox1 = new ComboBox();
+            dgvOrders = new DataGridView();
+            cmbProducts = new ComboBox();
             label1 = new Label();
             label2 = new Label();
-            comboBox2 = new ComboBox();
+            cmbYears = new ComboBox();
             label3 = new Label();
-            textBox1 = new TextBox();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            txtTotal = new TextBox();
+            ((System.ComponentModel.ISupportInitialize)dgvOrders).BeginInit();
             SuspendLayout();
             // 
-            // dataGridView1
+            // dgvOrders
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(12, 65);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.Size = new Size(388, 294);
-            dataGridView1.TabIndex = 0;
+            dgvOrders.AllowUserToAddRows = false;
+            dgvOrders.AllowUserToDeleteRows = false;
+            dgvOrders.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvOrders.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvOrders.Location = new Point(12, 39);
+            dgvOrders.Name = "dgvOrders";
+            dgvOrders.ReadOnly = true;
+            dgvOrders.Size = new Size(526, 320);
+            dgvOrders.TabIndex = 0;
             // 
-            // comboBox1
+            // cmbProducts
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(65, 7);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(121, 23);
-            comboBox1.TabIndex = 1;
+            cmbProducts.FormattingEnabled = true;
+            cmbProducts.Location = new Point(51, 10);
+            cmbProducts.Name = "cmbProducts";
+            cmbProducts.Size = new Size(217, 23);
+            cmbProducts.TabIndex = 1;
+            cmbProducts.SelectedIndexChanged += cmbProducts_SelectedIndexChanged;
             // 
             // label1
             // 
@@ -66,67 +71,69 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(214, 13);
+            label2.Location = new Point(274, 13);
             label2.Name = "label2";
             label2.Size = new Size(20, 15);
             label2.TabIndex = 3;
             label2.Text = "Yıl";
             // 
-            // comboBox2
+            // cmbYears
             // 
-            comboBox2.FormattingEnabled = true;
-            comboBox2.Location = new Point(279, 10);
-            comboBox2.Name = "comboBox2";
-            comboBox2.Size = new Size(121, 23);
-            comboBox2.TabIndex = 4;
+            cmbYears.FormattingEnabled = true;
+            cmbYears.Location = new Point(300, 10);
+            cmbYears.Name = "cmbYears";
+            cmbYears.Size = new Size(100, 23);
+            cmbYears.TabIndex = 4;
+            cmbYears.SelectedIndexChanged += cmbYears_SelectedIndexChanged;
             // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(241, 368);
+            label3.Location = new Point(379, 368);
             label3.Name = "label3";
             label3.Size = new Size(46, 15);
             label3.TabIndex = 5;
             label3.Text = "Toplam";
             // 
-            // textBox1
+            // txtTotal
             // 
-            textBox1.Location = new Point(300, 365);
-            textBox1.Name = "textBox1";
-            textBox1.ReadOnly = true;
-            textBox1.Size = new Size(100, 23);
-            textBox1.TabIndex = 6;
+            txtTotal.Location = new Point(438, 365);
+            txtTotal.Name = "txtTotal";
+            txtTotal.ReadOnly = true;
+            txtTotal.Size = new Size(100, 23);
+            txtTotal.TabIndex = 6;
             // 
             // FrmProductSales
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(412, 392);
-            Controls.Add(textBox1);
+            ClientSize = new Size(550, 392);
+            Controls.Add(txtTotal);
             Controls.Add(label3);
-            Controls.Add(comboBox2);
+            Controls.Add(cmbYears);
             Controls.Add(label2);
             Controls.Add(label1);
-            Controls.Add(comboBox1);
-            Controls.Add(dataGridView1);
+            Controls.Add(cmbProducts);
+            Controls.Add(dgvOrders);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "FrmProductSales";
             Text = "Ürün Satışları";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            Load += FrmProductSales_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvOrders).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
 
         #endregion
 
-        private DataGridView dataGridView1;
-        private ComboBox comboBox1;
+        private DataGridView dgvOrders;
+        private ComboBox cmbProducts;
         private Label label1;
         private Label label2;
-        private ComboBox comboBox2;
+        private ComboBox cmbYears;
         private Label label3;
-        private TextBox textBox1;
+        private TextBox txtTotal;
     }
 }

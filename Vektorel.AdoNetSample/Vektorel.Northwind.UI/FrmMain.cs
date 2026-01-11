@@ -44,6 +44,11 @@ namespace Vektorel.Northwind.UI
             OpenForm<FrmCustomerOrders>();
         }
 
+        private void btnProductSales_Click(object sender, EventArgs e)
+        {
+            OpenForm<FrmProductSales>();
+        }
+
         private void OpenForm<T>() where T : Form
         {
             var f = Activator.CreateInstance<T>();
