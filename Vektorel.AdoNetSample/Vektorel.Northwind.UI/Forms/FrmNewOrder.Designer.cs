@@ -136,6 +136,7 @@
             MinimizeBox = false;
             Name = "FrmNewOrder";
             Text = "Yeni Sipariş";
+            Load += FrmNewOrder_Load;
             ResumeLayout(false);
             PerformLayout();
         }

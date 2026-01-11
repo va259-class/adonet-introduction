@@ -26,6 +26,22 @@ namespace Vektorel.Northwind.UI.Managers
             return command.ExecuteReader();
         }
 
+        public void Execute(string query, params object[] parameters)
+        {
+            var connection = GetConnection();
+            var command = connection.CreateCommand();
+            command.Connection = connection;
+            command.CommandText = query;
+
+            var p = 1;
+            foreach (var parameter in parameters)
+            {
+                command.Parameters.AddWithValue($"p{p++}", parameter);
+            }
+
+            command.ExecuteNonQuery();
+        }
+
         private SqlConnection GetConnection()
         {
             var connectionString = ConfigurationManager.AppSettings.Get("ConnStr");

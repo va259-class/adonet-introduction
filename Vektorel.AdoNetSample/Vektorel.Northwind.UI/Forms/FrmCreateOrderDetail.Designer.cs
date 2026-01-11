@@ -28,28 +28,29 @@
         /// </summary>
         private void InitializeComponent()
         {
-            comboBox1 = new ComboBox();
+            cmbProducts = new ComboBox();
             label1 = new Label();
-            textBox1 = new TextBox();
-            numericUpDown1 = new NumericUpDown();
+            txtStock = new TextBox();
+            nudStock = new NumericUpDown();
             label2 = new Label();
-            numericUpDown2 = new NumericUpDown();
+            nudPrice = new NumericUpDown();
             btnAdd = new Button();
             label3 = new Label();
             dgvDetails = new DataGridView();
             btnComplete = new Button();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown2).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nudStock).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)nudPrice).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvDetails).BeginInit();
             SuspendLayout();
             // 
-            // comboBox1
+            // cmbProducts
             // 
-            comboBox1.FormattingEnabled = true;
-            comboBox1.Location = new Point(56, 6);
-            comboBox1.Name = "comboBox1";
-            comboBox1.Size = new Size(227, 23);
-            comboBox1.TabIndex = 0;
+            cmbProducts.FormattingEnabled = true;
+            cmbProducts.Location = new Point(56, 6);
+            cmbProducts.Name = "cmbProducts";
+            cmbProducts.Size = new Size(227, 23);
+            cmbProducts.TabIndex = 0;
+            cmbProducts.SelectedIndexChanged += cmbProducts_SelectedIndexChanged;
             // 
             // label1
             // 
@@ -60,19 +61,22 @@
             label1.TabIndex = 1;
             label1.Text = "Ürün";
             // 
-            // textBox1
+            // txtStock
             // 
-            textBox1.Location = new Point(289, 6);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(68, 23);
-            textBox1.TabIndex = 2;
+            txtStock.Location = new Point(289, 6);
+            txtStock.Name = "txtStock";
+            txtStock.ReadOnly = true;
+            txtStock.Size = new Size(68, 23);
+            txtStock.TabIndex = 2;
             // 
-            // numericUpDown1
+            // nudStock
             // 
-            numericUpDown1.Location = new Point(377, 6);
-            numericUpDown1.Name = "numericUpDown1";
-            numericUpDown1.Size = new Size(68, 23);
-            numericUpDown1.TabIndex = 3;
+            nudStock.Location = new Point(377, 6);
+            nudStock.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            nudStock.Name = "nudStock";
+            nudStock.Size = new Size(68, 23);
+            nudStock.TabIndex = 3;
+            nudStock.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // label2
             // 
@@ -83,17 +87,17 @@
             label2.TabIndex = 4;
             label2.Text = "Fiyat";
             // 
-            // numericUpDown2
+            // nudPrice
             // 
-            numericUpDown2.DecimalPlaces = 2;
-            numericUpDown2.Location = new Point(56, 35);
-            numericUpDown2.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
-            numericUpDown2.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
-            numericUpDown2.Name = "numericUpDown2";
-            numericUpDown2.Size = new Size(227, 23);
-            numericUpDown2.TabIndex = 5;
-            numericUpDown2.TextAlign = HorizontalAlignment.Right;
-            numericUpDown2.Value = new decimal(new int[] { 1, 0, 0, 0 });
+            nudPrice.DecimalPlaces = 2;
+            nudPrice.Location = new Point(56, 35);
+            nudPrice.Maximum = new decimal(new int[] { 1000, 0, 0, 0 });
+            nudPrice.Minimum = new decimal(new int[] { 1, 0, 0, 0 });
+            nudPrice.Name = "nudPrice";
+            nudPrice.Size = new Size(227, 23);
+            nudPrice.TabIndex = 5;
+            nudPrice.TextAlign = HorizontalAlignment.Right;
+            nudPrice.Value = new decimal(new int[] { 1, 0, 0, 0 });
             // 
             // btnAdd
             // 
@@ -141,19 +145,20 @@
             Controls.Add(dgvDetails);
             Controls.Add(label3);
             Controls.Add(btnAdd);
-            Controls.Add(numericUpDown2);
+            Controls.Add(nudPrice);
             Controls.Add(label2);
-            Controls.Add(numericUpDown1);
-            Controls.Add(textBox1);
+            Controls.Add(nudStock);
+            Controls.Add(txtStock);
             Controls.Add(label1);
-            Controls.Add(comboBox1);
+            Controls.Add(cmbProducts);
             FormBorderStyle = FormBorderStyle.FixedSingle;
             MaximizeBox = false;
             MinimizeBox = false;
             Name = "FrmCreateOrderDetail";
             Text = "Sipariş Detayı";
-            ((System.ComponentModel.ISupportInitialize)numericUpDown1).EndInit();
-            ((System.ComponentModel.ISupportInitialize)numericUpDown2).EndInit();
+            Load += FrmCreateOrderDetail_Load;
+            ((System.ComponentModel.ISupportInitialize)nudStock).EndInit();
+            ((System.ComponentModel.ISupportInitialize)nudPrice).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgvDetails).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -161,12 +166,12 @@
 
         #endregion
 
-        private ComboBox comboBox1;
+        private ComboBox cmbProducts;
         private Label label1;
-        private TextBox textBox1;
-        private NumericUpDown numericUpDown1;
+        private TextBox txtStock;
+        private NumericUpDown nudStock;
         private Label label2;
-        private NumericUpDown numericUpDown2;
+        private NumericUpDown nudPrice;
         private Button btnAdd;
         private Label label3;
         private DataGridView dgvDetails;

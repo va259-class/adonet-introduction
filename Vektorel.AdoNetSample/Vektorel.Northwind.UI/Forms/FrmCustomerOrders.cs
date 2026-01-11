@@ -75,7 +75,8 @@ namespace Vektorel.Northwind.UI.Forms
 
         private void btnNewOrder_Click(object sender, EventArgs e)
         {
-
+            var f = new FrmNewOrder(txtCustomerCode.Text);
+            f.ShowDialog();
         }
 
         class CustomerOrderDTO
