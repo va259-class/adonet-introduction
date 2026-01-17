@@ -39,9 +39,9 @@
             btnCustomerOrders = new Button();
             btnCategorySales = new Button();
             button10 = new Button();
-            button11 = new Button();
-            button12 = new Button();
-            button13 = new Button();
+            btnNeEmployee = new Button();
+            btnUpdateProduct = new Button();
+            btnSearchProductDapper = new Button();
             btnCustomersDapper = new Button();
             SuspendLayout();
             // 
@@ -153,32 +153,35 @@
             button10.Text = "-";
             button10.UseVisualStyleBackColor = true;
             // 
-            // button11
+            // btnNeEmployee
             // 
-            button11.Location = new Point(260, 99);
-            button11.Name = "button11";
-            button11.Size = new Size(118, 23);
-            button11.TabIndex = 16;
-            button11.Text = "-";
-            button11.UseVisualStyleBackColor = true;
+            btnNeEmployee.Location = new Point(260, 99);
+            btnNeEmployee.Name = "btnNeEmployee";
+            btnNeEmployee.Size = new Size(118, 23);
+            btnNeEmployee.TabIndex = 16;
+            btnNeEmployee.Text = "Yeni Çalışan";
+            btnNeEmployee.UseVisualStyleBackColor = true;
+            btnNeEmployee.Click += btnNeEmployee_Click;
             // 
-            // button12
+            // btnUpdateProduct
             // 
-            button12.Location = new Point(260, 70);
-            button12.Name = "button12";
-            button12.Size = new Size(118, 23);
-            button12.TabIndex = 15;
-            button12.Text = "-";
-            button12.UseVisualStyleBackColor = true;
+            btnUpdateProduct.Location = new Point(260, 70);
+            btnUpdateProduct.Name = "btnUpdateProduct";
+            btnUpdateProduct.Size = new Size(118, 23);
+            btnUpdateProduct.TabIndex = 15;
+            btnUpdateProduct.Text = "Ürün Değişikliği";
+            btnUpdateProduct.UseVisualStyleBackColor = true;
+            btnUpdateProduct.Click += btnUpdateProduct_Click;
             // 
-            // button13
+            // btnSearchProductDapper
             // 
-            button13.Location = new Point(260, 41);
-            button13.Name = "button13";
-            button13.Size = new Size(118, 23);
-            button13.TabIndex = 14;
-            button13.Text = "-";
-            button13.UseVisualStyleBackColor = true;
+            btnSearchProductDapper.Location = new Point(260, 41);
+            btnSearchProductDapper.Name = "btnSearchProductDapper";
+            btnSearchProductDapper.Size = new Size(118, 23);
+            btnSearchProductDapper.TabIndex = 14;
+            btnSearchProductDapper.Text = "Ürün Arama";
+            btnSearchProductDapper.UseVisualStyleBackColor = true;
+            btnSearchProductDapper.Click += btnSearchProductDapper_Click;
             // 
             // btnCustomersDapper
             // 
@@ -196,9 +199,9 @@
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(387, 163);
             Controls.Add(button10);
-            Controls.Add(button11);
-            Controls.Add(button12);
-            Controls.Add(button13);
+            Controls.Add(btnNeEmployee);
+            Controls.Add(btnUpdateProduct);
+            Controls.Add(btnSearchProductDapper);
             Controls.Add(btnCustomersDapper);
             Controls.Add(btnCategorySales);
             Controls.Add(btnProductSales);
@@ -231,9 +234,9 @@
         private Button btnCustomerOrders;
         private Button btnCategorySales;
         private Button button10;
-        private Button button11;
-        private Button button12;
-        private Button button13;
+        private Button btnNeEmployee;
+        private Button btnUpdateProduct;
+        private Button btnSearchProductDapper;
         private Button btnCustomersDapper;
     }
 }
