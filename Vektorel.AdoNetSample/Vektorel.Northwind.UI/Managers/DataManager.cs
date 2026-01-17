@@ -1,4 +1,5 @@
-﻿using Microsoft.Data.SqlClient;
+﻿using Dapper;
+using Microsoft.Data.SqlClient;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -42,7 +43,7 @@ namespace Vektorel.Northwind.UI.Managers
             command.ExecuteNonQuery();
         }
 
-        private SqlConnection GetConnection()
+        public SqlConnection GetConnection()
         {
             var connectionString = ConfigurationManager.AppSettings.Get("ConnStr");
             var connection = new SqlConnection(connectionString);

@@ -42,7 +42,7 @@
             button11 = new Button();
             button12 = new Button();
             button13 = new Button();
-            button14 = new Button();
+            btnCustomersDapper = new Button();
             SuspendLayout();
             // 
             // btnSearchProduct
@@ -180,14 +180,15 @@
             button13.Text = "-";
             button13.UseVisualStyleBackColor = true;
             // 
-            // button14
+            // btnCustomersDapper
             // 
-            button14.Location = new Point(260, 12);
-            button14.Name = "button14";
-            button14.Size = new Size(118, 23);
-            button14.TabIndex = 13;
-            button14.Text = "-";
-            button14.UseVisualStyleBackColor = true;
+            btnCustomersDapper.Location = new Point(260, 12);
+            btnCustomersDapper.Name = "btnCustomersDapper";
+            btnCustomersDapper.Size = new Size(118, 23);
+            btnCustomersDapper.TabIndex = 13;
+            btnCustomersDapper.Text = "Müşteri Listesi";
+            btnCustomersDapper.UseVisualStyleBackColor = true;
+            btnCustomersDapper.Click += btnCustomersDapper_Click;
             // 
             // FrmMain
             // 
@@ -198,7 +199,7 @@
             Controls.Add(button11);
             Controls.Add(button12);
             Controls.Add(button13);
-            Controls.Add(button14);
+            Controls.Add(btnCustomersDapper);
             Controls.Add(btnCategorySales);
             Controls.Add(btnProductSales);
             Controls.Add(btnCustomerOrders);
@@ -233,6 +234,6 @@
         private Button button11;
         private Button button12;
         private Button button13;
-        private Button button14;
+        private Button btnCustomersDapper;
     }
 }
