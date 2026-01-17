@@ -34,6 +34,7 @@
             label2 = new Label();
             txtProduct = new TextBox();
             cmbCategories = new ComboBox();
+            btnClear = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvProducts).BeginInit();
             SuspendLayout();
             // 
@@ -57,6 +58,7 @@
             btnSearch.TabIndex = 1;
             btnSearch.Text = "Ara";
             btnSearch.UseVisualStyleBackColor = true;
+            btnSearch.Click += btnSearch_Click;
             // 
             // label1
             // 
@@ -92,11 +94,22 @@
             cmbCategories.Size = new Size(154, 23);
             cmbCategories.TabIndex = 5;
             // 
+            // btnClear
+            // 
+            btnClear.Location = new Point(413, 27);
+            btnClear.Name = "btnClear";
+            btnClear.Size = new Size(75, 23);
+            btnClear.TabIndex = 6;
+            btnClear.Text = "Temizle";
+            btnClear.UseVisualStyleBackColor = true;
+            btnClear.Click += btnClear_Click;
+            // 
             // FrmSearchProductDapper
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(546, 383);
+            Controls.Add(btnClear);
             Controls.Add(cmbCategories);
             Controls.Add(txtProduct);
             Controls.Add(label2);
@@ -108,6 +121,7 @@
             MinimizeBox = false;
             Name = "FrmSearchProductDapper";
             Text = "Ürün Arama";
+            Load += FrmSearchProductDapper_Load;
             ((System.ComponentModel.ISupportInitialize)dgvProducts).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -121,5 +135,6 @@
         private Label label2;
         private TextBox txtProduct;
         private ComboBox cmbCategories;
+        private Button btnClear;
     }
 }
